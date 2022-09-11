@@ -39,7 +39,7 @@ for e in experiments:
 
 
 print(times)
-if(len(times)<n_experiments):
+if(len(times) < 8):
     times = [-1] * len(experiments)
 
 
