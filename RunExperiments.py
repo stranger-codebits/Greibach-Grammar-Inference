@@ -64,3 +64,10 @@ df_res['mean_time']  = times
 df_res.to_csv(outfile_res, index = False)
 
 print(df_res)
+
+# Remove all files except results
+try:
+    shutil.rmtree('experiments')
+    print("Removing direcory: experiments/")
+except:
+    pass
