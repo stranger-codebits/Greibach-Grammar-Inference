@@ -138,7 +138,7 @@ inline void print_usage()
                  "\t-m Define the mutation rate (Default 0.03)" << "\n" <<
                  "\t-P Define the size of the population (Default 500)" << "\n" <<
                  "\t-f Define the convergence fitness (0.0 ~ 1.0). (Default 1.0) \n\t if bestIndividualfitness > f * maxEstimatedFitness, then algorithm halts." << "\n" <<
-                 "\t-N Define the size of the non-Terminals set (Default 0)" << "\n" <<
+                 "\t-N Define the size of the non-Terminals set (Default 10)" << "\n" <<
                  "\t-t Define the rate of individuals that can be selected as parents (Default 0.85)" << "\n" <<
                  "\t-e Define the elitism rate (Default 0.03)" << "\n" <<
                  "\t-r Define the maximum rule length in the initial population (Default 5)" << "\n" <<
