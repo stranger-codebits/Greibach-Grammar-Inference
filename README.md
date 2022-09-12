@@ -53,7 +53,7 @@ More descriptions to be added.
 -P Define the size of the population (Default 500)
 -f Define the convergence fitness (0.0 ~ 1.0). (Default 1.0)
          if bestIndividualfitness > f * maxEstimatedFitness, then algorithm halts.
--N Define the size of the non-Terminals set (Default 0)
+-N Define the size of the non-Terminals set (Default 10)
 -t Define the rate of individuals that can be selected as parents (Default 0.85)
 -e Define the elitism rate (Default 0.03)
 -r Define the maximum rule length in the initial population (Default 5)
