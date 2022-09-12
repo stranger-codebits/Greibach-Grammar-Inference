@@ -65,6 +65,12 @@ GeneticAlgorithm::~GeneticAlgorithm()
         
         outfile << std::endl;
     }
+    else{
+	for (auto _r : gnf_stats(sol, av)) std::cout << _r << ", ";
+	for (auto _r : res_stats(sol, *positive_data, *negative_data, av))
+		            std::cout << _r << ", ";
+	std::cout << std::endl;
+    }
 
     std::cout << "[2] Deleting population... ";
     delete pool;
