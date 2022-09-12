@@ -12,3 +12,16 @@ baaaab
 aaaaaa
 aa
 babbab
+ababa
+aabaa
+abbba
+aba
+bab
+aaa
+b
+a
+bbb
+bbbbb
+baaab
+aaaaa
+babab
