@@ -68,6 +68,8 @@ inline void parse_cmd(int argc, char **argv, AlgoVars &av){
                     exit(1);
                 }
                 break;
+            case 'P':
+                av.P = atoi(optarg)
             case 'f':
                 av.f = atof(optarg);
                 if((av.f>1)||(av.f<0)){
