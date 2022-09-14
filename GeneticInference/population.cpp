@@ -51,7 +51,6 @@ Population::~Population()
 }
 
 bool Population::next_generation(const DataBase & positive, const DataBase & negative){
-
     // Calculate fitness of each individual
     calc_fitness(positive, negative);
 
@@ -59,7 +58,6 @@ bool Population::next_generation(const DataBase & positive, const DataBase & neg
     auto sort_idx = sort_indexes(PoolFitness);
 
     NextPool = pool();
-    
     // elitism individuals
     for(size_t i = 0; i < av->e * av->P; i++){
         NextPool.push_back(Pool[sort_idx[i]]);
@@ -84,7 +82,6 @@ bool Population::next_generation(const DataBase & positive, const DataBase & neg
         if((1.0*rand())/(1.0*RAND_MAX) < av->m) temp_gen = mutate(GreibachChromosome(temp_gen,av));
         NextPool.push_back(GreibachChromosome(temp_gen,av));
     }
-
     Pool = pool();
     for(size_t i = 0; i < av->P; i++) {
         Pool.push_back(NextPool[i]);
@@ -157,6 +154,10 @@ Genotype Population::create_offspring(double s, index_v idx){
                 i2 = i;
                 break;
             }
+        }
+        if(s==0){
+            i1 = rand()%Pool.size();
+            i2 = rand()%Pool.size();
         }
         temp_g = crossover(Pool[idx[i1]], Pool[idx[i2]]);
 
