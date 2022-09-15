@@ -96,6 +96,7 @@ void Population::calc_fitness(const DataBase & positive, const DataBase & negati
     PoolFitness = pool_fitness(av->P, 0.0);
 #pragma omp parallel for schedule(dynamic)
     for(size_t i = 0; i < Pool.size(); i++){
+        //std::cout << i << std::endl;
         PoolFitness[i] = calc_fitness_individual(
             Pool[i], positive, negative, av->s);
     }
