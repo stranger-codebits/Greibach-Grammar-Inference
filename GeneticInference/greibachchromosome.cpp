@@ -139,7 +139,7 @@ bool inline ParseWord(
             }
             // Case 2: One non-terminal in body of rule
             else if((w_size>1)&&(r.size()==3)){
-                unsigned int _minimum_depth = Depth - 1;
+                unsigned int _minimum_depth = minimum_depth - 1;
                 ParseWord(r[2], G, w, start_pointer+1, end_pointer, Parsed, _minimum_depth);
                 minimum_depth = (_minimum_depth < minimum_depth) ? 
                                 _minimum_depth : minimum_depth;
@@ -150,7 +150,7 @@ bool inline ParseWord(
             }
             // Case 3: multiple NT Symbols on body
             else if((w.size()>1)&&(r.size()>3)){
-                unsigned int _minimum_depth = Depth - 1;
+                unsigned int _minimum_depth = minimum_depth - 1;
                 NTArray nts(r.begin()+2, r.end());
                 Distribute(nts, G, w, start_pointer+1, end_pointer, Parsed, _minimum_depth);
                 minimum_depth = (_minimum_depth < minimum_depth) ? 
@@ -160,6 +160,9 @@ bool inline ParseWord(
                     return true;
                 }
             }
+        }
+        else if((r[0]==StartSymbol) && (r[1]==w[start_pointer]) && (w_size<r.size()-1) && (minimum_depth > 1)){
+            minimum_depth = minimum_depth - 1;
         }
     }
     Depth = minimum_depth;
@@ -194,7 +197,7 @@ bool inline Distribute(
             NTArray new_nts(non_terms.begin()+1, non_terms.end());
             ParseWord(non_terms[0], G, w, start_pointer, i, b1, d1);
             Distribute(new_nts, G, w, i, end_pointer, b2, d2);
-            minimum_depth = (d1+d2) < minimum_depth ? (d1+d2) : minimum_depth;
+            minimum_depth = (d1+d2) < minimum_depth ? (d1+d2-1) : minimum_depth;
             if(b1&&b2){
                 Depth = 0;
                 Parsed = true;

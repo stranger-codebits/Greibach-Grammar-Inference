@@ -6,7 +6,7 @@ from copy import deepcopy
 
 n_experiments = 10
 times = []
-outfile_res = "results.csv" 
+outfile_res = "results_3.csv" 
 
 # Experiments:
 experiments = dict()
