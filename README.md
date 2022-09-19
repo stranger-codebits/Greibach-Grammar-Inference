@@ -6,7 +6,7 @@ create context-free grammars from datasets using genetic algorithms.
 The conventions used are that each grammar representation follows 
 the [Greibach Normal Form](https://en.wikipedia.org/wiki/Greibach_normal_form)
 formalism. Goal is from a file containing words that should belong
-to a context-free grammar (psitive examples) and a file that contains data that should not belong
+to a context-free grammar (positive examples) and a file that contains data that should not belong
 in the same context-free grammar (negative examples), to generate the corresponding CFG.
 
 ## Getting Started
