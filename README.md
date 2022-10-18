@@ -126,7 +126,8 @@ There are several things in active development.
 ## Licensing
 This project is licensed under the GNU GPL v3.0 license.
 
-## If you use any of this work please cite this [paper](https://www.mdpi.com/2624-6120/3/4/42)
+## Work Citation 
+If you use any of this work please cite this [paper](https://www.mdpi.com/2624-6120/3/4/42)
 
 Anastasopoulos, N.; Dermatas, E. Building Greibach Normal Form Grammars Using Genetic Algorithms. Signals 2022, 3, 708-720. https://doi.org/10.3390/signals3040042 
 
